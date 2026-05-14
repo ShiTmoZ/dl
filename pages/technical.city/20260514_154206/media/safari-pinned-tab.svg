@@ -1,0 +1,1726 @@
+<!DOCTYPE html><html lang="en" style="height:100%">	<head>
+<script>
+'use strict';
+var lazyScripts;
+var s;
+var j;
+var flag;
+document.addEventListener("DOMContentLoaded", function() {
+    lazyScripts = document.getElementsByTagName("script");
+    j = 0;
+flag = 1;
+    window.addEventListener("scroll", function() {
+        init();
+    });
+    window.addEventListener("mousemove", function() {
+        init();
+    });
+    window.addEventListener("touchstart", function() {
+        init();
+    });
+    setTimeout(function() {
+        init();
+    }, 6000);
+});
+ 
+ 
+function init() {
+    if (flag) {
+        flag = 0;
+        load_all_js();
+    }
+}
+ 
+function lazyLoadScripts() {
+    if (j == lazyScripts.length) {
+        return;
+    }
+    //console.log('lazy new call...');
+    if (lazyScripts[j].getAttribute("type") == "lazyload2") {
+        lazyScripts[j].setAttribute("type", "lazyloaded");
+        if (typeof lazyScripts[j].dataset.src !== "undefined") {
+            s = document.createElement("script");
+            s.src = lazyScripts[j].dataset.src;
+            document.body.appendChild(s);
+            //console.log('lazy src: '+(lazyScripts[j].dataset.src))
+            s.onload = function() {
+                j++;
+                lazyLoadScripts();
+            };
+        } else {
+            s = document.createElement("script");
+            s.innerHTML = lazyScripts[j].innerHTML;
+            document.body.appendChild(s);
+            //console.log('lazy code: '+(lazyScripts[j].outerHTML))
+            j++;
+            lazyLoadScripts();
+        }
+    } else {
+        j++;
+        lazyLoadScripts();
+    }
+}
+ 
+ 
+function load_all_js() {
+    setTimeout(function() {
+        var defaultsLoaded = new Event("inline_event_load");
+        window.dispatchEvent(defaultsLoaded);
+    }, 1 * 100);
+ 
+    j = 0;
+ 
+    lazyScripts = document.getElementsByTagName("script");
+    lazyLoadScripts();    
+}
+</script>
+	
+
+
+
+
+<link rel="preconnect" href="https://technicalcity.b-cdn.net" crossorigin>
+<link rel="preconnect" href="https://counter.yadro.ru">
+<link rel="preconnect" href="https://connect.facebook.net">
+<link rel="preconnect" href="https://www.facebook.com">
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, user-scalable=no" />
+		
+				
+<title>Page not found - Technical City</title>
+
+<meta name="description" content="Page not found." />
+
+		<link rel="apple-touch-icon" sizes="152x152" href="//technicalcity.b-cdn.net/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="192x192" href="//technicalcity.b-cdn.net/favicon/android-chrome-192x192.png">
+		<link rel="icon" type="image/png" sizes="256x256" href="//technicalcity.b-cdn.net/favicon/android-chrome-256x256.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="//technicalcity.b-cdn.net/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="//technicalcity.b-cdn.net/favicon/favicon-16x16.png">
+		<link rel="manifest" href="//technicalcity.b-cdn.net/favicon/site.webmanifest">
+		<link rel="mask-icon" href="//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" color="#5bbad5">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="//technicalcity.b-cdn.net/favicon/mstile-150x150.png">
+		<meta name="theme-color" content="#ffffff">
+				<link rel="stylesheet" href="//technicalcity.b-cdn.net/css/css_parts/part_all_site.css?v=492" type="text/css" as="style" />
+				<link rel="stylesheet" href="//technicalcity.b-cdn.net/css/css_parts/part_compare_link_block.css?v=492" type="text/css" as="style" />
+				
+				
+						
+				
+		<script type="text/javascript" src="//technicalcity.b-cdn.net/js/jquery-3.6.0.min.js"></script>
+				
+		<script type="text/javascript" src="//technicalcity.b-cdn.net/js/jquery.suggest.js"></script>
+				
+		<script type="text/javascript" src="//technicalcity.b-cdn.net/js/jquery.fs.selecter.min.js"></script>
+				
+		<script type="text/javascript" src="//technicalcity.b-cdn.net/js/jquery-ui.js?1"></script>
+				
+		<script type="text/javascript" src="//technicalcity.b-cdn.net/js/jquery.main.js?56"></script>
+				
+		
+<link rel="canonical" href="https://technical.city/en//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" />
+
+<script>
+function fill_select(select_tag, options, selected){
+	var i;
+	var value, text;
+	
+//	console.log('typeof '+typeof(selected))
+	var selectedIndex=0;
+	
+	for(i=0;i<options.length;i++){
+		var option = document.createElement("option");
+		if(Array.isArray(options[i])){
+			value = options[i][0];
+			text = options[i][1];
+		}else{
+			value = options[i];
+			text = options[i];
+		}
+		option.text = text;
+		option.value = value;
+		if(typeof(selected)!='undefined' && selected == value){
+			//console.log('selected '+value)
+			option.selected = "selected";
+			option.setAttribute('selected', 'selected')
+			selectedIndex = i+1;
+		}
+		select_tag.add(option);
+	}
+	//select_tag.selectedIndex=selectedIndex;
+	//select_tag.value=selected;
+}
+</script>
+
+	<link rel="alternate" href="https://technical.city/en//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="en" />
+	<link rel="alternate" href="https://technical.city/ru//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="ru" />
+	<link rel="alternate" href="https://technical.city/es//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="es" />
+	<link rel="alternate" href="https://technical.city/pt//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="pt" />
+	<link rel="alternate" href="https://technical.city/de//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="de" />
+	<link rel="alternate" href="https://technical.city/fr//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="fr" />
+	<link rel="alternate" href="https://technical.city/it//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="it" />
+	<link rel="alternate" href="https://technical.city/pl//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="pl" />
+	<link rel="alternate" href="https://technical.city/zh//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="zh" />
+	<link rel="alternate" href="https://technical.city/ja//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="ja" />
+	<link rel="alternate" href="https://technical.city/ko//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="ko" />
+	<link rel="alternate" href="https://technical.city/hi//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="hi" />
+	<link rel="alternate" href="https://technical.city/tr//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="tr" />
+	<link rel="alternate" href="https://technical.city/id//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="id" />
+	<link rel="alternate" href="https://technical.city/ar//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="ar" />
+	<link rel="alternate" href="https://technical.city/th//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="th" />
+	<link rel="alternate" href="https://technical.city/vi//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="vi" />
+	<link rel="alternate" href="https://technical.city/en//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg" hreflang="x-default" />
+
+<style>
+@media /*(hover: hover) and*/ (min-width: 600px) and (min-height: 600px) {
+    .mobile-only{
+		display: none;
+	}
+}
+
+@media /*(hover: none) or*/ (max-width: 599px) or (max-height: 599px) {
+    .not-mobile-only{
+		display: none;
+	}
+}
+
+@supports (-webkit-touch-callout: none) {
+	.not-mobile-only{
+		display: none;
+	}
+}
+
+</style>
+
+<style>
+@media (min-width: 450px) {
+	.banner_very_top_bottom_more_space {
+		display: none;
+	}
+}
+@media (max-width: 295px) {
+	.banner_very_top_bottom_more_space {
+		display: none;
+	}
+}
+/*
+.banner_very_top_bottom_more_space {
+	padding-bottom: calc( 140px - 28% );
+}
+*/
+</style>
+
+<script>
+function is_mobile_device(){
+	if((window.matchMedia("(max-device-width: 599px)").matches || window.matchMedia("(max-device-height: 599px)").matches) || !window.matchMedia('(hover: hover)').matches){ // mobile
+		return true;
+	}
+	return false;
+}
+</script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3691899816816976"
+     crossorigin="anonymous"></script>
+
+
+<style>
+    .youtube-player {
+        position: relative;
+        padding-bottom: 56.23%;
+        /* Use 75% for 4:3 videos */
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 5px;
+    }
+    
+    .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: transparent;
+    }
+    
+    .youtube-player img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all;
+    }
+    
+    .youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+    }
+    
+    .youtube-player .play {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        background: url("//technicalcity.b-cdn.net/images/youtube-play.png") no-repeat;
+        cursor: pointer;
+    }
+
+	.rating-block.large .item .heading .avarage {
+		color: #a42bc6 !important;
+	}
+		.performance_difference_in_percents .percent_box.red .percent, .performance_difference_in_percents .percent_box.green .percent {
+		color: #331832;
+	}
+	</style>
+<style>
+select{
+
+	font-weight: 600;
+	color: #0076FF;
+	font-size: 16px;
+	line-height: 62px;
+	height: 62px;
+	padding: 0 16px;
+	padding-left: 13px;
+	cursor: pointer;
+	display: block;
+	-webkit-transition: color 0.3s linear;
+	-moz-transition: color 0.3s linear;
+	-ms-transition: color 0.3s linear;
+	-o-transition: color 0.3s linear;
+	transition: color 0.3s linear;
+
+	position: relative;
+	width: 100%;
+	height: 62px;
+	background: #FFFFFF;
+	background-position-x: 0%;
+	background-position-y: 0%;
+	background-repeat: repeat;
+	background-image: none;
+	background-size: auto;
+	border: 1px solid #4679AB;
+	-webkit-box-shadow: 0px 3px 5px -2px rgba(7, 8, 49, 0.510326), 0px 20px 30px -6px rgba(2, 11, 28, 0.202825);
+	box-shadow: 0px 3px 5px -2px rgba(7, 8, 49, 0.510326), 0px 20px 30px -6px rgba(2, 11, 28, 0.202825);
+	border-radius: 6px;
+
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-image: url(//technicalcity.b-cdn.net/images/select-arrows.png);
+	background-size: 26px;
+	background-position: right 0px;
+	background-repeat: no-repeat;
+}
+select:focus{
+	color: #0076FF;
+	background-position: right -61px;
+}
+
+</style>
+
+<style>
+			@media (min-width: 600px) {
+			#footer .holder {
+				padding-bottom: 124px;
+			}
+		}
+			body {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.block {
+		font-size: 18px;
+		line-height: 26px;
+	}
+	.items .item .title {
+		font-size: 15px !important;
+	}
+	@media (max-width: 639px) {
+		.items .item .title {
+			font-size: 15px !important;
+		}
+	}
+	.items .item .info {
+		font-size: 14px !important;
+	}
+	@media (max-width: 639px) {
+		.items .item .info {
+			font-size: 15px !important;
+		}
+	}
+	.block .search-results {
+		font-size: 15px;
+	}
+	.search-results td {
+		line-height: 17px;
+	}
+	.comparing .item .more_text {
+		font-size: 12px !important;
+	}
+</style>
+
+
+
+
+<script>
+forms_choose_items_button_texts = [];
+forms_choose_items_button_texts['video'] = [];
+forms_choose_items_button_texts['cpu'] = [];
+forms_choose_items_button_texts['devices'] = [];
+forms_choose_items_button_texts['video'][0] = 'No GPUs selected';
+forms_choose_items_button_texts['video'][1] = 'Details';
+//forms_choose_items_button_texts['video'][1] = 'Подробнее о #item_title#';
+forms_choose_items_button_texts['video'][2] = 'Compare';
+forms_choose_items_button_texts['cpu'][0] = 'No CPUs selected';
+forms_choose_items_button_texts['cpu'][1] = 'Details';
+//forms_choose_items_button_texts['cpu'][1] = 'Подробнее о #item_title#';
+forms_choose_items_button_texts['cpu'][2] = 'Compare';
+
+forms_choose_items_button_texts['devices'][0] = '';
+forms_choose_items_button_texts['devices'][1] = 'Details';
+//forms_choose_items_button_texts['devices'][1] = 'Подробнее о #item_title#';
+forms_choose_items_button_texts['devices'][2] = 'Compare';
+
+var left_bar_links=[];
+
+function recalculate_places_from_left_bar() {
+	//console.log('left_bar_links.length: ' + left_bar_links.length);
+	//console.log('left_bar_links: ' + left_bar_links.join(' / '));
+	for(i=0;i<left_bar_links.length;++i){
+		if($("a[name="+left_bar_links[i]+"]").length){
+			places_from_left_bar[left_bar_links[i]]=$("a[name="+left_bar_links[i]+"]").offset().top;
+		}
+	}
+}
+</script>
+
+	</head>
+	
+	<body style="overflow-y: scroll">
+	
+	<div style="position: absolute; left: 0; top: 0; z-index: -1; max-height: 100%; max-width: 100%; overflow: hidden"><img src="//technicalcity.b-cdn.net/images/big_transparent_for_largest_contentful_paint.png" rel="preload" class="no-lazy" /></div>
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WLXPQD2"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+		<div id="wrapper">
+			<main id="main">
+				
+				<div class="shadow_over_site_under_opened_menu popup"></div>
+				
+				<header id="header" itemscope itemtype="http://schema.org/WPHeader">
+				
+				<div id="shadow_over_site" class="shadow_over_site"></div>
+				
+
+									
+<div class="container not-mobile-only" style="height:auto; background-color:rgb(34, 70, 101); z-index:0"></div>
+					<div class="container top-container">
+
+					
+						<strong class="logo"><a href="/en">Technical City</a></strong>
+
+
+						<div style="display: flex; align-items: flex-start">
+						
+						<span class="icon-open-menu"></span>
+						<span class="icon-open-search"></span>
+						
+						<div class="logo_space_before_nav"></div>
+						
+						<nav id="navigation">
+														<div class="popup" id="show_admin_data_background" style="display: none; z-index: 1000"></div>
+														<form style="position:absolute;visibility:hidden;left:-1000px;" id="remove_ads_form" action="/en/remove-ads" method="post">
+							<input type="hidden" name="return_to" value="/en//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">							
+							</form>
+							
+							<form style="position:absolute;visibility:hidden;left:-1000px;" id="logout_form" action="/en/patreon-logout" method="post">
+							<input type="hidden" name="return_to" value="/en//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">							
+							</form>
+															<ul class="not-mobile-only">
+								
+																
+								<li class="not-mobile-only" style="cursor:default; padding-left: 6px"><a rel="nofollow" class="login-link" data-href="/en/remove-ads" onclick="document.querySelector('#remove_ads_form').submit();return false">Remove ads</a>
+									
+								</li>
+								
+																
+								</ul>
+															
+							<ul style="position: relative; z-index: 1001">
+							
+
+
+																									<li  onmouseover="document.getElementById('show_admin_data_background').style.display='block'" onmouseout="document.getElementById('show_admin_data_background').style.display='none'">
+																			Graphics cards <i class="icon-arrow_down"></i>																					<ul>
+												<li><a href="/en/video">Compare graphics cards</a></li>
+																										<li><a href="/en/video/rating">Graphics card ranking</a></li>
+																												<li><a href="/en/video/nvidia-rating">NVIDIA GPU ranking</a></li>
+																												<li><a href="/en/video/amd-rating">AMD GPU ranking</a></li>
+																												<li><a href="/en/video/best-price-to-performance">GPU price to performance</a></li>
+																									</ul>
+																				</li>
+																		<li  onmouseover="document.getElementById('show_admin_data_background').style.display='block'" onmouseout="document.getElementById('show_admin_data_background').style.display='none'">
+																			Processors <i class="icon-arrow_down"></i>																					<ul>
+												<li><a href="/en/cpu">Compare processors</a></li>
+																										<li><a href="/en/cpu/rating">Processors ranking</a></li>
+																												<li><a href="/en/cpu/intel-rating">Intel CPU ranking</a></li>
+																												<li><a href="/en/cpu/amd-rating">AMD CPU ranking</a></li>
+																												<li><a href="/en/cpu/best-price-to-performance">CPU price to performance</a></li>
+																									</ul>
+																				</li>
+																		<li  onmouseover="document.getElementById('show_admin_data_background').style.display='block'" onmouseout="document.getElementById('show_admin_data_background').style.display='none'">
+										Games <i class="icon-arrow_down"></i>
+										<ul>
+																						<li><a href="/en/can-i-run-it">Can I run it</a></li>
+																								<li><a href="/en/what-games-can-i-run">What games can I run?</a></li>
+																								<li><a href="/en/rate-my-pc">Rate My PC</a></li>
+																						</ul>
+									</li>
+																		<li  onmouseover="document.getElementById('show_admin_data_background').style.display='block'" onmouseout="document.getElementById('show_admin_data_background').style.display='none'">
+										Statistics <i class="icon-arrow_down"></i>
+										<ul>
+																						<li><a href="/en/hardware-survey">Hardware survey</a></li>
+																								<li><a href="/en/popular-games">Popular games</a></li>
+																						</ul>
+									</li>
+																									<style>
+								@media (min-width: 1024px) {
+									.hamburger-only{
+										display: none;
+									}
+								}
+
+								</style>
+								
+																<li class="hamburger-only" style="border-top:solid 1px #284a65;padding:0px;margin:10px 0"></li>
+																
+								<li class="hamburger-only" id="copy_here_mobile_menu_from_desktop_menu" onmouseover="document.getElementById('show_admin_data_background').style.display='block'" onmouseout="document.getElementById('show_admin_data_background').style.display='none'">
+																	</li>
+							</ul>
+						</nav>
+						
+						<div style="flex-grow: 1">
+							<form action="/en/search" method="get" id="search">
+								<input type="hidden" name="mode" value="short_ajax">
+								<fieldset style="position: relative">
+									<label><div>Search</div></label>
+									<input type="text" name="q" value="" placeholder="Search">
+									<button type="submit"><i class="icon-search"></i></button>
+									<button type="reset"><i class="icon-close"></i></button>
+								</fieldset>
+							</form>
+							<div class="search-panel">
+								<div class="search-content">
+																</div>
+								<footer class="search-footer">
+																</footer>
+							</div>
+						</div>
+						<nav id="languages">
+							<ul>
+							
+																								<li id="copy_to_mobile_menu_from_here" onmouseover="document.getElementById('show_admin_data_background').style.display='block'" onmouseout="document.getElementById('show_admin_data_background').style.display='none'">
+									English <i class="icon-arrow_down"></i>
+									<ul>
+																						<li><a onmousedown="return menu_down(event, this);" data-href="/ru//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Русский</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/es//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Español</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/pt//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Português</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/de//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Deutsch</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/fr//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Français</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/it//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Italiano</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/pl//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Polski</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/zh//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">中文</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/ja//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">日本語</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/ko//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">한국어</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/hi//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">हिंदी</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/tr//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Türkçe</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/id//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">Bahasa Indonesia</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/ar//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">اللغة العربية</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/th//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">ภาษาไทย</a></li>
+																								<li><a onmousedown="return menu_down(event, this);" data-href="/vi//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg">tiếng Việt</a></li>
+																					</ul>
+								</li>
+								
+								<script>
+								function menu_down(event, link){
+									link.href = link.dataset['href'];
+									return false;
+								}
+								</script>
+															</ul>
+						</nav>
+						
+						</div>
+						
+												
+					
+				</header>
+				
+
+				
+									<div style="background-color:#CEEC97" class="mobile-only">
+					
+												
+						<div style="padding-top: 4px; padding-bottom: 7px; padding-left: 6px;text-align:center;color:#6e98bc"><a rel="nofollow" class="login-link" style="color:inherit" data-href="/en/remove-ads" onclick="document.querySelector('#remove_ads_form').submit();return false">Remove ads</a>
+						</div>
+						
+									
+					
+					</div>
+									
+<script>function prepare_videos(){}</script>								<div class="container">
+														</div>
+				
+				<div id="content" >
+					<div class="container">
+					
+<div style="margin-bottom:20px">
+
+<div class="not-mobile-only">
+
+<style>
+.banner_globalsun_child_margin_top_compensation{
+	/*margin-bottom:16px;
+	padding-top: 1px;*/
+}
+.banner_globalsun_child_margin_bottom_compensation{
+	/*margin-top:16px;
+	padding-bottom: 1px;*/
+	margin-top: -15px;
+}
+@media (max-width: 600px) {
+	.banner_space_globalsun{
+
+		height:0;
+		padding-bottom: calc(56.25% + 20px);
+
+	}
+}
+@media (min-width: 601px) {
+	.banner_space_globalsun{
+		Xmin-height:264px;
+		min-height:300px;
+	}
+}
+
+</style>
+
+<div class="banner_globalsun_child_margin_top_compensation">
+</div>
+
+<div class="banner_space_globalsun">
+<div id=globalsun_desk></div>
+
+<script type="text/javascript">
+var e = document.getElementById('globalsun_desk');
+if(e.offsetWidth>0) {
+e.id = 'globalsun';
+(function () { var ukJS = document.createElement("script"); ukJS.src = "//player.globalsun.io/v/2.0/content-player.js"; ukJS.type = "text/javascript"; ukJS.addEventListener("load", function () { var player = new uk_videoPlayer({ width: 420, height: 350, adserver_id: "4a00b1ac96bc7941112e43", category: "07c2441a62df008fb7c2bf", item: "94f91af4bc8d6e0dd2344d", }); player.init(); }); document.getElementsByTagName("head")[0].append(ukJS); })();
+}
+</script></div>
+
+<div class="banner_globalsun_child_margin_bottom_compensation">
+</div>
+
+
+</div>
+
+
+<div class="mobile-only">
+
+<style>
+.banner_globalsun_child_margin_top_compensation{
+	/*margin-bottom:16px;
+	padding-top: 1px;*/
+}
+.banner_globalsun_child_margin_bottom_compensation{
+	/*margin-top:16px;
+	padding-bottom: 1px;*/
+	margin-top: -15px;
+}
+@media (max-width: 600px) {
+	.banner_space_globalsun{
+
+		height:0;
+		padding-bottom: calc(56.25% + 20px);
+
+		Xmin-height:264px;
+	}
+}
+@media (min-width: 601px) {
+	.banner_space_globalsun{
+		min-height:300px;
+	}
+}
+
+</style>
+
+<div class="banner_globalsun_child_margin_top_compensation">
+</div>
+
+<div class="banner_space_globalsun">
+<div id=globalsun_mob></div>
+
+<script type="text/javascript">
+var e = document.getElementById('globalsun_mob');
+if(e.offsetWidth>0) {
+e.id = 'globalsun';
+(function () { var ukJS = document.createElement("script"); ukJS.src = "//player.globalsun.io/v/2.0/content-player.js"; ukJS.type = "text/javascript"; ukJS.addEventListener("load", function () { var player = new uk_videoPlayer({ width: 420, height: 350, adserver_id: "4a00b1ac96bc7941112e43", category: "07c2441a62df008fb7c2bf", item: "4e66381bd1da21a7592923", }); player.init(); }); document.getElementsByTagName("head")[0].append(ukJS); })();
+}
+</script></div>
+
+<div class="banner_globalsun_child_margin_bottom_compensation">
+</div>
+
+
+</div>
+
+</div>
+
+<div class="banner_very_top_bottom_more_space"></div>
+<div class="head-title"><h1>Page not found</h1>
+
+</div>
+<!-- CONTENT -->
+							<span style="display:block">
+		
+<div class="block">
+<p style="font-size: 24px; line-height: 29px">We couldn't find such page: <strong>/en//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg</strong></p>
+</div>
+
+<div style="height:20px;clear:both"></div>
+
+<div>
+<h2>Popular graphics cards comparisons</h2>
+</div>
+
+<div class="comparing">
+	
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-4060-vs-GeForce-RTX-5060">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 4060" title="RTX 4060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>4060 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5060" title="RTX 5060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5060 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-3070-vs-GeForce-RTX-5060">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 3070" title="RTX 3070"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>3070 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5060" title="RTX 5060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5060 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-3060-vs-GeForce-RTX-5060">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 3060" title="RTX 3060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>3060 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5060" title="RTX 5060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5060 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-5070-vs-GeForce-RTX-5060-Ti-16-GB">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5070" title="RTX 5070"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5070 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5060 Ti 16 GB" title="RTX 5060 Ti 16 GB"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5060 Ti 16 GB </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-3060-Ti-vs-GeForce-RTX-5060">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 3060 Ti" title="RTX 3060 Ti"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>3060 Ti </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5060" title="RTX 5060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5060 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-5070-vs-GeForce-RTX-5070-Ti">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5070" title="RTX 5070"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5070 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 5070 Ti" title="RTX 5070 Ti"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>5070 Ti </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+	</div>
+
+<div>
+<h2>Popular graphics cards</h2>
+</div>
+
+<div class="comparing">
+	
+		<div class="item">
+		<a href="/en/video/RTX-PRO-6000-Blackwell-Server">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX PRO 6000 Blackwell Server" title="RTX PRO 6000 Blackwell Server"></span>
+				<strong class="type">
+					<span>RTX PRO</span> <em>6000 Blackwell Server</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/video/RTX-PRO-6000-Blackwell-Server">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX PRO 6000 Blackwell Server" title="RTX PRO 6000 Blackwell Server"></span>
+				<strong class="type">
+					<span>RTX PRO</span> <em>6000 Blackwell Server</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/video/Radeon-RX-580">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RX 580" title="RX 580"></span>
+				<strong class="type">
+					<span>Radeon RX</span> <em>580</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-4060">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 4060" title="RTX 4060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>4060</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-3060">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 3060" title="RTX 3060"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>3060</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/video/GeForce-RTX-4070-SUPER">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/video_logotypes/3/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="RTX 4070 SUPER" title="RTX 4070 SUPER"></span>
+				<strong class="type">
+					<span>GeForce RTX</span> <em>4070 SUPER</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+	</div>
+
+<div>
+<h2>Popular CPU comparisons</h2>
+</div>
+
+<div class="comparing">
+	
+		<div class="item">
+		<a href="/en/cpu/Core-i5-12400F-vs-Ryzen-5-5600">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/1/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="i5-12400F" title="i5-12400F"></span>
+				<strong class="type">
+					<span>Core i5</span> <em>12400F </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 5600" title="Ryzen 5 5600"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>5600 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-7-5700X-vs-Ryzen-5-7500F">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 7 5700X" title="Ryzen 7 5700X"></span>
+				<strong class="type">
+					<span>Ryzen 7</span> <em>5700X </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 7500F" title="Ryzen 5 7500F"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>7500F </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-5-5600-vs-Ryzen-5-5500">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 5600" title="Ryzen 5 5600"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>5600 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 5500" title="Ryzen 5 5500"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>5500 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-5-5600-vs-Ryzen-7-5700X">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 5600" title="Ryzen 5 5600"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>5600 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 7 5700X" title="Ryzen 7 5700X"></span>
+				<strong class="type">
+					<span>Ryzen 7</span> <em>5700X </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-5-3600-vs-Ryzen-5-5500">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 3600" title="Ryzen 5 3600"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>3600 </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 5500" title="Ryzen 5 5500"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>5500 </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-7-7800X3D-vs-Ryzen-7-9800X3D">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 7 7800X3D" title="Ryzen 7 7800X3D"></span>
+				<strong class="type">
+					<span>Ryzen 7</span> <em>7800X3D </em>
+				</strong>
+			</div>
+			<div class="vs">vs</div>
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 7 9800X3D" title="Ryzen 7 9800X3D"></span>
+				<strong class="type">
+					<span>Ryzen 7</span> <em>9800X3D </em>
+				</strong>
+			</div>
+		</a>
+		
+	</div>
+	</div>
+
+<div>
+<h2>Popular CPUs</h2>
+</div>
+
+<div class="comparing">
+	
+		<div class="item">
+		<a href="/en/cpu/Ryzen-Threadripper-PRO-9995WX">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen Threadripper PRO 9995WX" title="Ryzen Threadripper PRO 9995WX"></span>
+				<strong class="type">
+					<span>Ryzen Threadripper PRO</span> <em>9995WX</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-7-7800X3D">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 7 7800X3D" title="Ryzen 7 7800X3D"></span>
+				<strong class="type">
+					<span>Ryzen 7</span> <em>7800X3D</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-5-5500">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 5500" title="Ryzen 5 5500"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>5500</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-Threadripper-PRO-9995WX">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen Threadripper PRO 9995WX" title="Ryzen Threadripper PRO 9995WX"></span>
+				<strong class="type">
+					<span>Ryzen Threadripper PRO</span> <em>9995WX</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Core-i5-13600K">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/1/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="i5-13600K" title="i5-13600K"></span>
+				<strong class="type">
+					<span>Core i5</span> <em>13600K</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+		
+		<div class="item">
+		<a href="/en/cpu/Ryzen-5-7500F">
+			<div class="model">
+				<span class="icon"><img src="//technicalcity.b-cdn.net/en/cpu_logotypes/2/image?thumbnail=yes&amp;maxwidth=38&amp;maxheight=38" class="item_photo" alt="Ryzen 5 7500F" title="Ryzen 5 7500F"></span>
+				<strong class="type">
+					<span>Ryzen 5</span> <em>7500F</em>
+				</strong>
+			</div>
+		</a>
+			</div>
+	</div>
+
+		</span>
+		
+<!-- /CONTENT -->
+					</div>
+				</div>
+				<div class="sticky-right not-mobile-only">
+										<div class="banner-1-right">
+						
+
+					</div>
+				</div>
+				<div class="sticky-left">
+				
+				
+			
+					<div class="banner-1-left">
+										</div>
+
+								</div>
+			</main>
+			<footer id="footer" itemscope itemtype="http://schema.org/WPFooter">
+				<div class="container">
+				
+<div><span><div class="breadcrumbs" style="display: block;
+	margin-top: 0px;
+	margin-bottom: 15px;">
+<span><span id="breadcrumb_0"><span class="almost_bold">Home</span></span></span><script type="application/ld+json">
+{
+	"@context": "https://schema.org",
+	"@type": "BreadcrumbList",
+	"itemListElement":
+	[
+						{
+					"@type": "ListItem",
+					"position": 1										,"item":
+					{
+												"name": "Home"
+					}
+									}
+					]
+}
+</script>
+</div></span></div>				
+					<div class="holder">
+						<strong class="logo">Technical city</strong>
+						<div class="col">
+							<span class="note">Notice an issue? Highlight it and press Ctrl+Enter to report.</span>
+							<ul class="about note">
+								<li>Games benchmarked by <a href="https://www.notebookcheck.net" target="_blank" rel="noopener">notebookcheck.net</a></li>
+							</ul>
+													</div>
+						<div class="col">
+													</div>
+						<div class="by">
+														<strong class="logo-bg"><a>B-G</a></strong>
+							<span>Web design by <em class="copyright">Baturin Group</em></span>
+						</div>
+					</div>
+				</div>
+			</footer>
+		</div>
+
+
+
+
+
+<script>
+	selectedText = '';
+	near_selection = '';
+	
+	function send_site_error_message() {
+		//alert("Тестовая отправка" + document.getElementById('site_error_selection_content').innerHTML + " / " + document.getElementById('site_error_comment').value);
+		//site_error_confirm_dialog.dialog( "close" );
+		
+
+		
+		//$('#site_error_send-popup').hide();
+		
+
+		  $('#site_error_send-popup').fadeOut(300);
+		  $('body').removeClass('popup-show');
+		  --openedPopupsCounter;
+		  if (openedPopupsCounter <= 0) {
+			enableWindowScroll();
+		  }
+	 
+		//$('#site_error_send-confirm-popup').show();
+		
+		  $('body').addClass('popup-show');
+		  $('#site_error_send-confirm-popup').fadeIn(300);
+		  ++openedPopupsCounter;
+		  if (openedPopupsCounter == 1) {
+			disableWindowScroll();
+		  }		
+
+		$('.ui-dialog :button').blur();
+		
+		//...и отправляем запрос
+		
+		$.ajax({
+			type: "POST",
+			url: "/en/errors_collector",
+			data: {error_fragment:selectedText, pageurl:window.location.href, near_error_fragment:near_selection, user_comment:document.getElementById('site_error_comment').value, email:document.getElementById('site_error_email').value},
+			success: function(msg) {
+				//alert(msg);
+				document.getElementById('site_error_comment').value = '';
+			}
+		});
+		
+		//alert(selectedText);
+	}
+	
+	$(document).ready(
+	function() {
+		
+		/*
+		site_error_confirm_dialog = $( "#site_error_confirm_dialog" ).dialog({
+		  autoOpen: false,
+		  modal: true,
+		  buttons:
+		  [
+			  {
+				  text: "Submit",
+				  click: send_site_error_message,
+				  class: "btn btn-primary waves-effect waves-light btn-primary-2"
+			  },
+			  {
+				  text: "Cancel",
+				  click: function() {
+					  site_error_confirm_dialog.dialog( "close" );
+				  },
+				  class: "btn btn-primary waves-effect waves-light btn-primary-2"
+			  }
+		  ]
+		});
+		*/
+		
+		//назначаем обработчик нажатия на Ctrl + Enter
+		var isCtrl = false;
+		$(document).keyup(function (e) {
+			if(e.which == 17) isCtrl=false;
+		}).keydown(function (e) {
+			if(e.which == 17) isCtrl=true;
+			if(e.which == 13 && isCtrl == true) {
+				//...ищем выделенный текст... 
+				if (window.getSelection) {
+					selectedText = window.getSelection().toString();
+					near_selection = window.getSelection().anchorNode.textContent;
+				}
+				else if (document.getSelection) {
+					selectedText = document.getSelection().toString();
+					near_selection = document.getSelection().anchorNode.textContent;
+				}
+				else if (document.selection) {
+					selectedText = document.selection.createRange().text;
+					near_selection = document.selection.createRange().startContainer.innerHTML.toString();
+				}
+				if (selectedText) {
+					document.getElementById('site_error_selection_content').innerHTML = selectedText;
+					//document.getElementById('site_error_near_selection').innerHTML = near_selection;
+					
+					//site_error_confirm_dialog.dialog( "open" );
+					
+					//$('#site_error_send-popup').show();
+					
+					  $('body').addClass('popup-show');
+					  $('#site_error_send-popup').fadeIn(300);
+					  
+					  var buttons = document.getElementById('site_error_send-popup').getElementsByTagName('button')
+					  for(var i=0;i<buttons.length;i++){
+						  buttons[i].blur();
+					  }
+					  
+					  ++openedPopupsCounter;
+					  if (openedPopupsCounter == 1) {
+						disableWindowScroll();
+					  }
+				}
+			}
+		});
+		
+		// копируем левое меню изнутри контента
+		
+		/*
+		left_menu_source = document.getElementById('copy_to_left_menu_from_here');
+		left_menu_copy_here = document.getElementById('copy_here_left_menu_from_content');
+		if (left_menu_source && left_menu_copy_here) {
+			left_menu_copy_here.innerHTML = left_menu_source.innerHTML;
+		}
+		*/
+		
+		var left_menu_source = document.getElementById('copy_to_left_menu_from_here');
+		var left_menu_copy_here = document.getElementById('copy_here_left_menu_from_content');
+		if (left_menu_source && left_menu_copy_here) {
+			var my_menu_links_list = left_menu_source.children[0].children;
+			var left_menu_copy_here_child = document.createElement("ol");
+			left_menu_copy_here_child.style.cssText = 'list-style: decimal; padding-bottom: 10px; padding-left: 19px; color: #000; font-size: 13px;';
+			left_menu_copy_here.appendChild(left_menu_copy_here_child);
+			var left_menu_copy_here_2 = left_menu_copy_here.children[0];
+			
+			if (left_menu_copy_here_2 && my_menu_links_list) {
+				for (var i = 0; i < my_menu_links_list.length; i++) {
+					var my_link_element = my_menu_links_list[i];
+					//var my_link_new_container = document.createElement("div");
+					var my_link_new_container = document.createElement("li");
+					my_link_new_container.style.cssText = 'display: list-item; margin-left: 4px';
+					my_link_new_container.innerHTML = my_link_element.innerHTML;
+					left_menu_copy_here_2.appendChild(my_link_new_container);
+				}
+			}
+		}
+		// копируем выбор языка, чтобы не дублировался в исходном коде
+		
+		var languages_list_source = document.getElementById('copy_to_mobile_menu_from_here');
+		var languages_list_copy_here = document.getElementById('copy_here_mobile_menu_from_desktop_menu');
+		if (languages_list_source && languages_list_copy_here) {
+			languages_list_copy_here.innerHTML = languages_list_source.innerHTML;
+		}
+	});
+	
+	var left_menu_timeout=null;
+	
+	function scroll_effect_on_left_menu(){
+		if (document.getElementById('show_left_menu_when_scrolled_to_this')) {
+			var window_top=jQuery(window).scrollTop();
+			//console.log('window_top: ' + window_top);
+			var show_left_menu_when_scrolled_to_this = $('#show_left_menu_when_scrolled_to_this').offset().top;
+			//console.log('show_left_menu_when_scrolled_to_this: ' + show_left_menu_when_scrolled_to_this);
+			if(window_top>show_left_menu_when_scrolled_to_this){
+				//console.log('visibility: visible');
+				clearTimeout(left_menu_timeout);
+				jQuery('.left_menu_itself').css( "visibility", "visible" );
+				jQuery('.left_menu_itself').removeClass('left_menu_hidden_state');
+			}else{
+				//console.log('visibility: hidden...');
+				clearTimeout(left_menu_timeout);
+				jQuery('.left_menu_itself').addClass('left_menu_hidden_state');
+				//setTimeout(() => jQuery('.left_menu_itself').css( "visibility", "hidden" ), 320);
+				left_menu_timeout = setTimeout(function(){jQuery('.left_menu_itself').css( "visibility", "hidden" );}, 320);
+			}
+		}
+	}
+	jQuery(window).scroll(scroll_effect_on_left_menu);scroll_effect_on_left_menu();
+	
+	
+	var places_from_left_bar=[];
+	left_bar_places_length=0;
+	for(i=0;i<left_bar_links.length;++i){
+		if($("a[name="+left_bar_links[i]+"]").length){
+			places_from_left_bar[left_bar_links[i]]=$("a[name="+left_bar_links[i]+"]").offset().top;
+			++left_bar_places_length;
+		}
+		else{
+		}
+	}
+	var do_mark_position_in_leftbar;
+	if(left_bar_places_length){
+		do_mark_position_in_leftbar=true;
+	}
+	else{
+		do_mark_position_in_leftbar=false;
+	}
+	places_from_left_bar_array_numeric=[];
+	for(x in places_from_left_bar){
+		cur_array=[];
+		cur_array.key=x;
+		cur_array.value=places_from_left_bar[x];
+		places_from_left_bar_array_numeric.push(cur_array);
+	}
+	places_from_left_bar_array_numeric.sort(function(a,b){
+		return a.value-b.value;
+	});
+	places_from_left_bar=[];
+	for(x in places_from_left_bar_array_numeric){
+		if(places_from_left_bar_array_numeric[x]&&places_from_left_bar_array_numeric[x]["key"]){
+			places_from_left_bar[places_from_left_bar_array_numeric[x]["key"]]=places_from_left_bar_array_numeric[x]["value"];
+		}
+	}
+
+	function find_near_anchor_by_scroll_position(scr_pos){
+		found_key="";
+		for(x in places_from_left_bar){
+			if(places_from_left_bar[x]<=scr_pos){
+				found_key=x;
+			}
+			else{
+				break;
+			}
+		}
+		return found_key;
+	}
+
+	function mark_link_by_position(scr_pos){
+		$(".left_bar_link").removeClass("leftbar_currently_positioned_here");
+		leftbar_active_element=find_near_anchor_by_scroll_position(scr_pos);
+		if(leftbar_active_element){
+			$(".left_bar_link_"+leftbar_active_element).addClass("leftbar_currently_positioned_here");
+		}
+	}
+
+	$(document).ready(function(){
+		if(do_mark_position_in_leftbar){
+			mark_link_by_position($(document).scrollTop());
+		}
+	});
+
+	$(document).scroll(function(){
+		if(do_mark_position_in_leftbar){
+			mark_link_by_position($(document).scrollTop());
+		}
+	});
+</script>
+
+	
+<div class="popup" id="site_error_send-popup">
+	<div class="popup-content">
+		<span class="close"><i class="icon-close"></i></span>
+		<div style="margin-bottom: 12px; font-size: 20px; line-height: 27px; color: #000; font-weight: bold">Report an error</div>
+		<div style="color: #000000">Highlighted fragment with error:</div>
+		<div id="site_error_selection_content" style="padding-bottom: 10px; color: #000000; font-weight: bold"></div>
+		<div style="padding-bottom: 10px; color: #000000">Indicate exactly what the error is, if it is not obvious:</div>
+		<form action="" onsubmit="send_site_error_message();return false">
+			<fieldset>
+				<div>
+					<textarea id="site_error_comment" name="site_error_comment" placeholder="Note" style="width: 100%; color: #000000"></textarea>
+				</div>
+				<div style="padding-top: 10px; padding-bottom: 10px; color: #000000">Email (optional): For follow-up questions about your correction.</div>
+				<div>
+					<input id="site_error_email" name="email" placeholder="E-mail" style="width: 100%; color: #000000">
+				</div>
+				<div class="form-row">
+					<div class="form-action">
+						<button type="submit" class="btn btn-primary waves-effect waves-light">Submit</button>
+						<button type="submit" class="btn-close btn btn-primary waves-effect waves-light">Cancel</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+</div>
+<div class="popup" id="site_error_send-confirm-popup">
+	<div class="popup-content align-center">
+		<span class="close"><i class="icon-close"></i></span>
+		<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+			<circle cx="32" cy="32" r="31" stroke="#09C400" stroke-width="2"/>
+			<path d="M21.25 30L30.4808 40L45.25 24" stroke="#09C400" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+		</svg>
+		<p style="font-weight: bold">Your error message has been sent!</p>
+				<button class="btn-close btn btn-primary waves-effect waves-light">Continue</button>
+	</div>
+</div>
+<!--LiveInternet counter--><script type="text/javascript">
+new Image().src = "//counter.yadro.ru/hit?r"+
+escape(document.referrer)+((typeof(screen)=="undefined")?"":
+";s"+screen.width+"*"+screen.height+"*"+(screen.colorDepth?
+screen.colorDepth:screen.pixelDepth))+";u"+escape(document.URL)+
+";"+Math.random();</script><!--/LiveInternet-->
+<script type="text/javascript">new Image().src = '/en/my_counter?rnd='+Math.random();</script>
+
+
+<style>
+
+body.seregalazy-done .seregalazy,
+body.seregalazy-done .seregalazy-loaded,
+body.seregalazy-done .seregalazybg,
+body.seregalazy-done .seregalazybg-loaded
+
+{
+	opacity: 0;
+	/*
+	transition-property: opacity;
+	transition-timing-function: ease-in;
+	transition-duration: .3s;
+	*/
+	/*
+	не меняем свойства transition всего подряд, если не надо
+	*/
+	transition: opacity .3s ease-in;
+}
+
+</style>
+
+<script>
+
+
+var lazy_check_interval = 1000;
+
+
+/* is element on screen*/
+function elementInViewport2(element) {
+    const rect = element.getBoundingClientRect();
+    return (
+        rect.top >= 0 &&
+        rect.left >= 0 &&
+        rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+        rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+    );
+}
+
+function prepare_lazy_images(all){
+	console.log('lazy images preparing...');
+	var transparent_gif="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+	
+	var images=document.getElementsByTagName('img');
+	var i;
+	//console.log('images:'+images.length);
+	
+
+	//for(i=0;i<images.length;i++){
+	for(i=images.length-1;i>=0;i--){
+		
+		if(images[i]){
+			if((all || !elementInViewport2(images[i])) && !images[i].classList.contains('seregalazy') && !images[i].classList.contains('seregalazy-loaded') && !images[i].classList.contains('no-lazy')){
+				
+				images[i].classList.add('seregalazy');
+				//images[i].dataset.lazysrc=images[i].src;
+				images[i].dataset.lazysrc=images[i].getAttribute('src')
+				images[i].src=transparent_gif;
+				
+				//images[i].style.opacity="0";
+				//images[i].style.transitionProperty="opacity";
+				//images[i].style.transitionTimingFunction="ease-in";
+				//images[i].style.transitionDuration=".3s";
+				
+			}
+		}
+	}
+	var backgrounds=document.querySelectorAll('*');
+	for(i=0;i<backgrounds.length;i++){
+	//for(i=0;i<backgrounds.length;i++){
+		if(backgrounds && backgrounds[i] && backgrounds[i].style){
+			var bg = getComputedStyle(backgrounds[i])
+			if(bg) {
+				bg=bg.backgroundImage;
+				if(bg.match(/http[s]?:/) && !elementInViewport2(backgrounds[i]) && !backgrounds[i].classList.contains('seregalazybg') && !backgrounds[i].classList.contains('seregalazybg-loaded') && !backgrounds[i].classList.contains('no-lazy')){
+					backgrounds[i].classList.add('seregalazybg');
+					backgrounds[i].dataset.lazysrc=bg;
+					backgrounds[i].style.backgroundImage="url("+transparent_gif+")";
+					
+					//backgrounds[i].style.opacity="0";
+					//backgrounds[i].style.transitionProperty="opacity";
+					//backgrounds[i].style.transitionTimingFunction="ease-in";
+					//backgrounds[i].style.transitionDuration=".3s";
+				}
+			}
+		}
+	}
+	document.body.classList.add('seregalazy-done');
+	console.log('lazy images prepared');
+}
+
+prepare_lazy_images();
+
+var lazy_timeout;
+
+function show_lazy_image(image){
+	if(!image.classList.contains('seregalazy')) return;
+
+	image.classList.remove('seregalazy');
+	image.classList.add('seregalazy-loaded');
+
+	image.onload=function(){
+		
+		//console.log('onload ok')
+		
+		var image = this;
+		image.style.opacity="1";
+		
+		
+		//console.log('image1 '+i+' '+(images[i].alt));
+		setTimeout(function(image){
+			/*
+			image.style.transitionProperty="";
+			image.style.transitionTimingFunction="";
+			image.style.transitionDuration="";
+			*/
+			image.classList.remove('seregalazy-loaded');
+			//console.log('image2 '+(image.alt));
+			//console.log(image.style.transitionProperty)
+		}, 333, image);
+		
+	}
+
+	image.src = image.dataset.lazysrc;
+	image.dataset.lazysrc='';
+	
+}
+
+var show_lazy_images_last_run=0;
+
+function show_lazy_images(now){
+	
+	//console.log('show_lazy_images() '+show_lazy_images_last_run);
+	
+	
+	if(!now && Date.now() - show_lazy_images_last_run < lazy_check_interval * 5) {
+		//console.log('no: '+(Date.now() - show_lazy_images_last_run))
+//		show_lazy_images_last_run=Date.now();
+
+	
+		//lazy_timeout = setTimeout(show_lazy_images, lazy_check_interval);
+	
+		return; // skip tik
+	}else{
+		//console.log('show_lazy_images ok');
+	}
+	
+
+	
+//console.log('show_lazy_images()');
+	var images=document.getElementsByClassName('seregalazy');
+	//var msg=''
+	var i;
+	//for(i=0;i<images.length;i++){
+	for(i=images.length-1;i>=0;i--){
+	//for(i in images){
+		//console.log('i:'+i);
+		//msg+=(''+images[i].alt+':'+(elementInViewport2(images[i]))+' ')
+		//console.log('image '+i+' '+(images[i].dataset.lazysrc)+" in viewport:"+elementInViewport2(images[i]));
+		if(images[i] && images[i].dataset.lazysrc && images[i].dataset.lazysrc!='' && elementInViewport2(images[i])){
+			//console.log('yes, show ^^');
+			setTimeout(show_lazy_image, 10, images[i])
+			//console.log('load lazy!');
+		}
+		//console.log('images.length '+(images.length))
+	}
+	//console.log(msg);
+	var backgrounds=document.getElementsByClassName('seregalazybg');
+	for(i=0;i<backgrounds.length;i++){
+		if(backgrounds[i] && backgrounds[i].dataset.lazysrc && backgrounds[i].dataset.lazysrc!='' && elementInViewport2(backgrounds[i])){
+			//backgrounds[i].style.backgroundImage = backgrounds[i].dataset.lazysrc;
+			
+			backgrounds[i].style.opacity="1";
+
+			backgrounds[i].style.backgroundImage = '';
+			backgrounds[i].dataset.lazysrc='';
+			backgrounds[i].classList.add('seregalazybg-loaded');
+			backgrounds[i].classList.remove('seregalazybg');
+
+		}
+	}
+	//clearTimeout(lazy_timeout);
+	//lazy_timeout = setTimeout(show_lazy_images, 200);
+	
+	show_lazy_images_last_run=Date.now();
+	
+	//lazy_timeout = setTimeout(show_lazy_images, lazy_check_interval);
+}
+
+show_lazy_images(true);
+
+window.onscroll=function(){
+	show_lazy_images(true);
+}
+
+setInterval(show_lazy_images, lazy_check_interval);
+</script>
+
+
+<script src="/human-friendly/main.js?2"></script>
+<script>
+function reload_yandex_ads(){
+	var scripts = document.getElementsByTagName("script");
+	var script
+	for(script of scripts){
+		if(script.innerHTML != '' && script.innerHTML.match(/window\.yaContextCb\.push/g)){
+			//alert(script.innerHTML);
+			var found;
+			found = script.innerHTML.match(/Ya\.Context\.AdvManager\.render\({[\s\S]*?}\)/g);
+			if(found && !found[0].match(/type:\s*'(floorAd|fullscreen)'/g)){
+				var container_id = found[0].match(/renderTo:\s*'(.*?)'/)
+				//console.log(container_id)
+				if(container_id){
+					//console.log(container_id[1])
+					//banner container
+					var container = document.getElementById(container_id[1])
+					
+					if(elementInViewport2(container) && container.offsetHeight>0){
+						//console.log(found[0]);
+						eval(found[0])
+						//return;
+					}else{
+						//console.log('not visible');
+					}
+				}
+			}
+		}
+	}
+}
+setInterval('reload_yandex_ads()', 30*1000);
+</script>
+
+
+
+
+
+<form style="display:none" id="form-for-links" method="post">
+</form>
+<script>
+function via_form_links(){ //send these links via forms by post
+	var elements = document.querySelectorAll('[data-via-form]');
+	for(var i=0;i<elements.length;i++){
+		var el = elements[i];
+		el.addEventListener('click', function(event) {
+			event.preventDefault();
+			console.log('event.target:', event.target);
+			console.log('event.currentTarget:', event.currentTarget);
+			var form = document.querySelector('#form-for-links');
+			form.action = event.target.href;
+			form.submit();
+			return false;
+		});
+	}
+}
+
+via_form_links();
+</script>
+
+ 
+
+
+
+
+
+	</body>
+</html><!-- Hello 20.14.76.131 -->

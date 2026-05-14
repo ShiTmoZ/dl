@@ -10,3 +10,5 @@
 ![pornhub.com](./pornhub.com/20260514_143850/media/favicon.ico) **pornhub.com** — [ [مشاهده](./pornhub.com/20260514_143850/index.md) | [📦 دانلود](./pornhub.com/20260514_143850.zip) ]
 
 ![technical.city](./technical.city/20260514_152807/media/favicon.png) **technical.city** — [ [مشاهده](./technical.city/20260514_152807/index.md) | [📦 دانلود](./technical.city/20260514_152807.zip) ]
+
+![technical.city](./technical.city/20260514_154206/media/favicon.png) **technical.city** — [ [مشاهده](./technical.city/20260514_154206/index.md) | [📦 دانلود](./technical.city/20260514_154206.zip) ]

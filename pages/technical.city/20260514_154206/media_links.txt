@@ -1,0 +1,10 @@
+//technicalcity.b-cdn.net/favicon/android-chrome-192x192.png
+//technicalcity.b-cdn.net/favicon/android-chrome-256x256.png
+//technicalcity.b-cdn.net/favicon/apple-touch-icon.png
+//technicalcity.b-cdn.net/favicon/favicon-16x16.png
+//technicalcity.b-cdn.net/favicon/favicon-32x32.png
+//technicalcity.b-cdn.net/favicon/safari-pinned-tab.svg
+//technicalcity.b-cdn.net/images/big_transparent_for_largest_contentful_paint.png
+//technicalcity.b-cdn.net/images/smile.png
+//technicalcity.b-cdn.net/images/smile_sad.png
+/images/icon_copy_link.png
