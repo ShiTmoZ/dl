@@ -32,7 +32,6 @@ jobs:
         run: |
           BRANCH="${GITHUB_REF_NAME}"
 
-          echo "AVASAM (https://avasam.ir) - Cleaning downloads folder"
           echo ""
 
           if [ -d "downloads" ]; then
@@ -53,7 +52,7 @@ jobs:
             exit 0
           fi
 
-          git commit -m "[AVASAM] Clean downloads folder [skip ci]"
+          git commit -m "Clean downloads folder [skip ci]"
 
           echo "Pushing changes..."
 
@@ -72,14 +71,13 @@ jobs:
               mkdir -p downloads
               printf '## empty\nfor start go Action tab and use left side workflows\n' > downloads/README.md
               git add -f downloads/README.md
-              git commit -m "[AVASAM] Clean downloads folder [skip ci]" 2>/dev/null || true
+              git commit -m "Clean downloads folder [skip ci]" 2>/dev/null || true
             }
 
             if timeout 60 git push origin HEAD:"$BRANCH" 2>&1; then
               echo ""
               echo "=========================================="
               echo "✅ Downloads folder cleared successfully!"
-              echo "AVASAM (https://avasam.ir)"
               echo "=========================================="
               exit 0
             else
