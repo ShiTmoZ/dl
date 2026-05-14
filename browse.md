@@ -12,3 +12,5 @@
 ![favicon](pages/technical.city/20260514_152807/media/favicon.png) 4- [technical.city](pages/technical.city/20260514_152807/index.md)
 
 ![favicon](pages/technical.city/20260514_154206/media/favicon.png) 5- [technical.city](pages/technical.city/20260514_154206/index.md)
+
+![favicon](pages/instagram.com/20260514_162248/media/favicon.ico) 6- [instagram.com](pages/instagram.com/20260514_162248/index.md)
