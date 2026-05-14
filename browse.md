@@ -8,3 +8,5 @@
 ![favicon](pages/eporner.com/20260514_143605/media/favicon.ico) 2- [eporner.com](pages/eporner.com/20260514_143605/index.md)
 
 ![favicon](pages/pornhub.com/20260514_143850/media/favicon.ico) 3- [pornhub.com](pages/pornhub.com/20260514_143850/index.md)
+
+![favicon](pages/technical.city/20260514_152807/media/favicon.png) 4- [technical.city](pages/technical.city/20260514_152807/index.md)
