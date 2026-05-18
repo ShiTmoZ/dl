@@ -14,3 +14,5 @@
 ![technical.city](./technical.city/20260514_154206/media/favicon.png) **technical.city** — [ [مشاهده](./technical.city/20260514_154206/index.md) | [📦 دانلود](./technical.city/20260514_154206.zip) ]
 
 ![instagram.com](./instagram.com/20260514_162248/media/favicon.ico) **instagram.com** — [ [مشاهده](./instagram.com/20260514_162248/index.md) | [📦 دانلود](./instagram.com/20260514_162248.zip) ]
+
+![xvideos.com](./xvideos.com/20260518_182152/media/favicon.ico) **xvideos.com** — [ [مشاهده](./xvideos.com/20260518_182152/index.md) | [📦 دانلود](./xvideos.com/20260518_182152.zip) ]
