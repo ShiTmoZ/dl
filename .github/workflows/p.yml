@@ -47,123 +47,131 @@ jobs:
         with:
           python-version: '3.10'
 
-      - name: Install yt-dlp and dependencies
+      - name: Install latest yt-dlp and tools
         run: |
           pip install -U yt-dlp
+          pip install -U yt-dlp[default]
           sudo apt-get update
-          sudo apt-get install -y bc wget curl
+          sudo apt-get install -y bc wget curl ffmpeg jq
+          # نصب yt-dlp از آخرین نسخه
+          pip install --upgrade --no-cache-dir yt-dlp
 
       - name: Setup cookies (if provided)
         if: ${{ github.event.inputs.cookies != '' }}
         run: |
           echo "${{ github.event.inputs.cookies }}" | base64 -d > cookies.txt
 
-      - name: Update yt-dlp and install browser extensions
+      - name: Extract video direct URL using multiple methods
+        id: extract
+        shell: bash
         run: |
-          # نصب آخرین نسخه yt-dlp
-          pip install -U yt-dlp
+          URL="${{ github.event.inputs.url }}"
+          echo "Processing URL: $URL"
           
-          # نصب ابزارهای کمکی برای سایت‌های خاص
-          pip install -U yt-dlp[default]
+          # روش 1: استفاده از yt-dlp با فلگ --get-url
+          echo "Method 1: Trying yt-dlp --get-url..."
+          yt-dlp --get-url --allow-unplayable-formats "$URL" > direct_urls.txt 2>&1 || true
+          
+          # روش 2: استفاده از yt-dlp با --dump-json برای اطلاعات کامل
+          echo "Method 2: Trying yt-dlp --dump-json..."
+          yt-dlp --dump-json --allow-unplayable-formats "$URL" > video_info.json 2>&1 || true
+          
+          # روش 3: استفاده از extractor-args برای اجبار به generic
+          echo "Method 3: Trying generic extractor..."
+          yt-dlp --extractor-args "generic:no-playlist" --get-url "$URL" >> direct_urls.txt 2>&1 || true
+          
+          # نمایش محتوای فایل‌ها برای دیباگ
+          echo "=== direct_urls.txt content ==="
+          cat direct_urls.txt
+          echo "=== video_info.json content ==="
+          cat video_info.json
+          
+          # جستجوی لینک m3u8 یا mp4 در خروجی
+          if grep -E '\.(m3u8|mp4|ts|mkv|webm)' direct_urls.txt; then
+            VIDEO_URL=$(grep -E '\.(m3u8|mp4|ts|mkv|webm)' direct_urls.txt | head -1)
+            echo "Found video URL: $VIDEO_URL"
+            echo "video_url=$VIDEO_URL" >> $GITHUB_OUTPUT
+            echo "method=yt-dlp" >> $GITHUB_OUTPUT
+          else
+            echo "No direct URL found with yt-dlp"
+          fi
 
-      - name: Download video with advanced options
+      - name: Download using curl/wget if yt-dlp fails
+        if: steps.extract.outputs.video_url == ''
+        shell: bash
+        run: |
+          URL="${{ github.event.inputs.url }}"
+          FOLDER="${{ github.event.inputs.output_folder }}"
+          mkdir -p "$FOLDER"
+          
+          # تلاش برای یافتن ویدیو در سورس صفحه
+          echo "Downloading webpage source..."
+          curl -L -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+               -H "Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
+               -H "Accept-Language: en-US,en;q=0.5" \
+               -b cookies.txt 2>/dev/null \
+               "$URL" > webpage.html
+          
+          # جستجوی لینک‌های ویدیو در صفحه
+          echo "Searching for video URLs in page..."
+          grep -Eio 'https?://[^"'\''<>]+\.(mp4|m3u8|ts|mkv|webm|flv)[^"'\''<>]*' webpage.html | head -5 > found_urls.txt
+          
+          # استفاده از regex پیشرفته‌تر برای یافتن ویدیو
+          grep -Eio '(https?://[^"'\''<>]+/(?:video|media|stream)/[^"'\''<>]+)' webpage.html >> found_urls.txt
+          
+          if [ -s found_urls.txt ]; then
+            echo "Found video URLs:"
+            cat found_urls.txt
+            VIDEO_URL=$(head -1 found_urls.txt)
+            echo "video_url=$VIDEO_URL" >> $GITHUB_OUTPUT
+            echo "method=curl" >> $GITHUB_OUTPUT
+          else
+            echo "No video URL found in webpage"
+            echo "video_url=" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Download video file
         id: download
         shell: bash
         run: |
           FOLDER="${{ github.event.inputs.output_folder }}"
           mkdir -p "$FOLDER"
-          touch marker
-
-          MAX_RETRIES=5
-          RETRY_COUNT=0
-          SUCCESS=false
-
-          # ساخت آرایه از فلگ‌های اضافی
-          EXTRA_FLAGS=""
-
-          # اضافه کردن کوکی اگر وجود دارد
-          if [ -f "cookies.txt" ]; then
-            EXTRA_FLAGS="$EXTRA_FLAGS --cookies cookies.txt"
-            echo "Using cookies file"
+          
+          VIDEO_URL="${{ steps.extract.outputs.video_url }}"
+          if [ -z "$VIDEO_URL" ]; then
+            VIDEO_URL="${{ steps.extract.outputs.video_url }}"
           fi
-
-          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
-            echo "Download attempt $((RETRY_COUNT+1))/$MAX_RETRIES"
-            echo "URL: ${{ github.event.inputs.url }}"
-
-            # کامند دانلود با تنظیمات پیشرفته
-            yt-dlp \
-              --output "./$FOLDER/%(uploader)s - %(title)s - %(id)s.%(ext)s" \
-              --format "${{ github.event.inputs.quality }}" \
-              --merge-output-format mp4 \
-              --retries 10 \
-              --fragment-retries 15 \
-              --no-check-certificate \
-              --geo-bypass \
-              --geo-bypass-country US \
-              --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
-              --add-header "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
-              --add-header "Accept-Language:en-us,en;q=0.5" \
-              --add-header "Accept-Encoding:gzip, deflate" \
-              --add-header "Connection:keep-alive" \
-              --sleep-interval 3 \
-              --max-sleep-interval 8 \
-              --no-cache-dir \
-              --rm-cache-dir \
-              --extractor-args "generic:no-playlist" \
-              $EXTRA_FLAGS \
-              --verbose \
-              "${{ github.event.inputs.url }}" 2>&1 | tee download.log
-
-            # بررسی خروجی و فایل ایجاد شده
-            if [ $? -eq 0 ]; then
-              NEW_FILE=$(find "$FOLDER" -type f -newer marker -print -quit 2>/dev/null)
-              
-              if [ -n "$NEW_FILE" ] && [ -f "$NEW_FILE" ]; then
-                FILE_SIZE=$(stat -c %s "$NEW_FILE" 2>/dev/null || echo "0")
-                if [ "$FILE_SIZE" -gt 10000 ]; then  # حداقل 10 کیلوبایت
-                  echo "Download succeeded: $NEW_FILE (Size: $FILE_SIZE bytes)"
-                  SUCCESS=true
-                  break
-                else
-                  echo "Downloaded file too small or corrupted: $FILE_SIZE bytes"
-                  rm -f "$NEW_FILE"
-                fi
-              else
-                echo "No file detected after download"
-              fi
-            else
-              echo "Download attempt failed"
-              # نمایش خطای خاص
-              if grep -q "HTTP Error 410" download.log; then
-                echo "ERROR: Video no longer exists on server (410 Gone)"
-                echo "The video has been permanently removed from the source website"
-                exit 1
-              elif grep -q "Unable to download webpage" download.log; then
-                echo "WARNING: Cannot access webpage - might need cookies or authentication"
-              fi
-            fi
-
-            RETRY_COUNT=$((RETRY_COUNT+1))
-
-            if [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$SUCCESS" = false ]; then
-              echo "Waiting 10 seconds before retry..."
-              sleep 10
-            fi
-          done
-
-          if [ "$SUCCESS" = false ]; then
-            echo "All download attempts failed"
-            echo "Last error log:"
-            tail -n 50 download.log
+          
+          if [ -z "$VIDEO_URL" ]; then
+            echo "No video URL found, aborting"
             exit 1
           fi
-
-          FILENAME=$(basename "$NEW_FILE")
-          SIZE_BYTES=$(stat -c %s "$NEW_FILE")
-
-          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
-          echo "size_bytes=$SIZE_BYTES" >> $GITHUB_OUTPUT
+          
+          echo "Downloading from: $VIDEO_URL"
+          cd "$FOLDER"
+          
+          # تعیین نام فایل از URL
+          FILENAME="video_$(date +%Y%m%d_%H%M%S).mp4"
+          if [[ "$VIDEO_URL" == *".m3u8"* ]]; then
+            # برای فایل‌های m3u8 از ffmpeg استفاده کن
+            ffmpeg -i "$VIDEO_URL" -c copy -bsf:a aac_adtstoasc "$FILENAME" -y
+          else
+            # دانلود مستقیم با curl
+            curl -L -C - -o "$FILENAME" \
+              -A "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36" \
+              -b ../cookies.txt 2>/dev/null \
+              "$VIDEO_URL"
+          fi
+          
+          if [ -f "$FILENAME" ] && [ $(stat -c %s "$FILENAME") -gt 10000 ]; then
+            SIZE_BYTES=$(stat -c %s "$FILENAME")
+            echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+            echo "size_bytes=$SIZE_BYTES" >> $GITHUB_OUTPUT
+            echo "Download successful: $FILENAME ($SIZE_BYTES bytes)"
+          else
+            echo "Download failed or file too small"
+            exit 1
+          fi
 
       - name: Install RAR
         run: sudo apt-get install -y rar
