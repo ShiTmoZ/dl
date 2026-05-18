@@ -1,0 +1,209 @@
+name: p
+
+on:
+  workflow_dispatch:
+    inputs:
+      url:
+        description: 'URL of the video'
+        required: true
+        type: string
+      output_folder:
+        description: 'Folder where the video will be saved'
+        required: false
+        type: string
+        default: 'downloads'
+      quality:
+        description: 'Video quality (yt-dlp format selector)'
+        required: true
+        type: string
+        default: 'bestvideo[height<=720]+bestaudio/best[ext=mp4]/best'
+      archive_name:
+        description: 'Base name for the RAR archive (if file is split)'
+        required: false
+        type: string
+        default: 'video'
+      cookies:
+        description: 'Cookies file content (base64 encoded) - optional'
+        required: false
+        type: string
+        default: ''
+
+permissions:
+  contents: write
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  download-and-maybe-split:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install yt-dlp and dependencies
+        run: |
+          pip install -U yt-dlp
+          sudo apt-get update
+          sudo apt-get install -y bc wget curl
+
+      - name: Setup cookies (if provided)
+        if: ${{ github.event.inputs.cookies != '' }}
+        run: |
+          echo "${{ github.event.inputs.cookies }}" | base64 -d > cookies.txt
+
+      - name: Update yt-dlp and install browser extensions
+        run: |
+          # نصب آخرین نسخه yt-dlp
+          pip install -U yt-dlp
+          
+          # نصب ابزارهای کمکی برای سایت‌های خاص
+          pip install -U yt-dlp[default]
+
+      - name: Download video with advanced options
+        id: download
+        shell: bash
+        run: |
+          FOLDER="${{ github.event.inputs.output_folder }}"
+          mkdir -p "$FOLDER"
+          touch marker
+
+          MAX_RETRIES=5
+          RETRY_COUNT=0
+          SUCCESS=false
+
+          # ساخت آرایه از فلگ‌های اضافی
+          EXTRA_FLAGS=""
+
+          # اضافه کردن کوکی اگر وجود دارد
+          if [ -f "cookies.txt" ]; then
+            EXTRA_FLAGS="$EXTRA_FLAGS --cookies cookies.txt"
+            echo "Using cookies file"
+          fi
+
+          while [ $RETRY_COUNT -lt $MAX_RETRIES ]; do
+            echo "Download attempt $((RETRY_COUNT+1))/$MAX_RETRIES"
+            echo "URL: ${{ github.event.inputs.url }}"
+
+            # کامند دانلود با تنظیمات پیشرفته
+            yt-dlp \
+              --output "./$FOLDER/%(uploader)s - %(title)s - %(id)s.%(ext)s" \
+              --format "${{ github.event.inputs.quality }}" \
+              --merge-output-format mp4 \
+              --retries 10 \
+              --fragment-retries 15 \
+              --no-check-certificate \
+              --geo-bypass \
+              --geo-bypass-country US \
+              --user-agent "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36" \
+              --add-header "Accept:text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8" \
+              --add-header "Accept-Language:en-us,en;q=0.5" \
+              --add-header "Accept-Encoding:gzip, deflate" \
+              --add-header "Connection:keep-alive" \
+              --sleep-interval 3 \
+              --max-sleep-interval 8 \
+              --no-cache-dir \
+              --rm-cache-dir \
+              --extractor-args "generic:no-playlist" \
+              $EXTRA_FLAGS \
+              --verbose \
+              "${{ github.event.inputs.url }}" 2>&1 | tee download.log
+
+            # بررسی خروجی و فایل ایجاد شده
+            if [ $? -eq 0 ]; then
+              NEW_FILE=$(find "$FOLDER" -type f -newer marker -print -quit 2>/dev/null)
+              
+              if [ -n "$NEW_FILE" ] && [ -f "$NEW_FILE" ]; then
+                FILE_SIZE=$(stat -c %s "$NEW_FILE" 2>/dev/null || echo "0")
+                if [ "$FILE_SIZE" -gt 10000 ]; then  # حداقل 10 کیلوبایت
+                  echo "Download succeeded: $NEW_FILE (Size: $FILE_SIZE bytes)"
+                  SUCCESS=true
+                  break
+                else
+                  echo "Downloaded file too small or corrupted: $FILE_SIZE bytes"
+                  rm -f "$NEW_FILE"
+                fi
+              else
+                echo "No file detected after download"
+              fi
+            else
+              echo "Download attempt failed"
+              # نمایش خطای خاص
+              if grep -q "HTTP Error 410" download.log; then
+                echo "ERROR: Video no longer exists on server (410 Gone)"
+                echo "The video has been permanently removed from the source website"
+                exit 1
+              elif grep -q "Unable to download webpage" download.log; then
+                echo "WARNING: Cannot access webpage - might need cookies or authentication"
+              fi
+            fi
+
+            RETRY_COUNT=$((RETRY_COUNT+1))
+
+            if [ $RETRY_COUNT -lt $MAX_RETRIES ] && [ "$SUCCESS" = false ]; then
+              echo "Waiting 10 seconds before retry..."
+              sleep 10
+            fi
+          done
+
+          if [ "$SUCCESS" = false ]; then
+            echo "All download attempts failed"
+            echo "Last error log:"
+            tail -n 50 download.log
+            exit 1
+          fi
+
+          FILENAME=$(basename "$NEW_FILE")
+          SIZE_BYTES=$(stat -c %s "$NEW_FILE")
+
+          echo "filename=$FILENAME" >> $GITHUB_OUTPUT
+          echo "size_bytes=$SIZE_BYTES" >> $GITHUB_OUTPUT
+
+      - name: Install RAR
+        run: sudo apt-get install -y rar
+
+      - name: Conditional split (if file > 99 MB)
+        id: split
+        shell: bash
+        run: |
+          FOLDER="${{ github.event.inputs.output_folder }}"
+          FILENAME="${{ steps.download.outputs.filename }}"
+          SIZE_BYTES="${{ steps.download.outputs.size_bytes }}"
+          SIZE_MB=$(echo "scale=2; $SIZE_BYTES / 1048576" | bc)
+          THRESHOLD_MB=99
+
+          cd "$FOLDER"
+
+          if (( $(echo "$SIZE_MB > $THRESHOLD_MB" | bc -l) )); then
+            RANDOM_HEX=$(openssl rand -hex 3)
+            ARCHIVE_NAME="${{ github.event.inputs.archive_name }}_${RANDOM_HEX}"
+
+            rar a -v95m -m5 -ep1 "${ARCHIVE_NAME}.rar" "$FILENAME"
+
+            rm "$FILENAME"
+
+            echo "split_done=true" >> $GITHUB_OUTPUT
+            ls -lh "${ARCHIVE_NAME}.part"*.rar
+          else
+            echo "split_done=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push to repository
+        shell: bash
+        run: |
+          FOLDER="${{ github.event.inputs.output_folder }}"
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          
+          git add "$FOLDER/" || true
+          
+          git commit -m "Add downloaded video(s)" || echo "Nothing to commit"
+          
+          git push || echo "Push failed but continuing"
