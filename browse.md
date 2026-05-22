@@ -24,3 +24,5 @@
 ![favicon](pages/web.bale.ai/20260522_100342/media/favicon.ico) 10- [web.bale.ai](pages/web.bale.ai/20260522_100342/index.md)
 
 ![favicon](pages/pornhub.com/20260522_100718/media/favicon.ico) 11- [pornhub.com](pages/pornhub.com/20260522_100718/index.md)
+
+![favicon](pages/technical.city/20260522_102346/media/favicon.png) 12- [technical.city](pages/technical.city/20260522_102346/index.md)
