@@ -30,3 +30,5 @@
 ![favicon](pages/technical.city/20260522_103455/media/favicon.png) 13- [technical.city](pages/technical.city/20260522_103455/index.md)
 
 ![favicon](pages/open.spotify.com/20260522_104653/media/favicon.ico) 14- [open.spotify.com](pages/open.spotify.com/20260522_104653/index.md)
+
+![favicon](pages/comix.to/20260522_104812/media/favicon.png) 15- [comix.to](pages/comix.to/20260522_104812/index.md)
