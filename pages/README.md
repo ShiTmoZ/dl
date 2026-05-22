@@ -38,3 +38,5 @@
 ![scribd.com](./scribd.com/20260522_105756/media/favicon.png) **scribd.com** — [ [مشاهده](./scribd.com/20260522_105756/index.md) | [📦 دانلود](./scribd.com/20260522_105756.zip) ]
 
 ![scribd.com](./scribd.com/20260522_110209/media/favicon.png) **scribd.com** — [ [مشاهده](./scribd.com/20260522_110209/index.md) | [📦 دانلود](./scribd.com/20260522_110209.zip) ]
+
+![web.bale.ai](./web.bale.ai/20260522_111245/media/favicon.ico) **web.bale.ai** — [ [مشاهده](./web.bale.ai/20260522_111245/index.md) | [📦 دانلود](./web.bale.ai/20260522_111245.zip) ]
