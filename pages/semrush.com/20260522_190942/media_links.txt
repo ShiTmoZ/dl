@@ -1,0 +1,4 @@
+/__static__/apple-touch-icon.fe16ae843d17.png
+/__static__/favicon.37cab19e6995.svg
+/__static__/favicon.d8fbaa3a030a.ico
+https://static.semrush.com/website/images/competitors/binoculars.svg
