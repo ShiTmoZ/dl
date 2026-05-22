@@ -1,0 +1,3 @@
+https://open.spotifycdn.com/cdn/images/favicon.0f31d2ea.ico
+https://open.spotifycdn.com/cdn/images/favicon16.1c487bff.png
+https://open.spotifycdn.com/cdn/images/favicon32.b64ecc03.png

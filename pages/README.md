@@ -28,3 +28,5 @@
 ![technical.city](./technical.city/20260522_102346/media/favicon.png) **technical.city** — [ [مشاهده](./technical.city/20260522_102346/index.md) | [📦 دانلود](./technical.city/20260522_102346.zip) ]
 
 ![technical.city](./technical.city/20260522_103455/media/favicon.png) **technical.city** — [ [مشاهده](./technical.city/20260522_103455/index.md) | [📦 دانلود](./technical.city/20260522_103455.zip) ]
+
+![open.spotify.com](./open.spotify.com/20260522_104653/media/favicon.ico) **open.spotify.com** — [ [مشاهده](./open.spotify.com/20260522_104653/index.md) | [📦 دانلود](./open.spotify.com/20260522_104653.zip) ]
