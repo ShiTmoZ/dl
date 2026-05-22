@@ -36,3 +36,5 @@
 ![favicon](pages/mangadex.org/20260522_105010/media/favicon.ico) 16- [mangadex.org](pages/mangadex.org/20260522_105010/index.md)
 
 ![favicon](pages/scribd.com/20260522_105756/media/favicon.png) 17- [scribd.com](pages/scribd.com/20260522_105756/index.md)
+
+![favicon](pages/scribd.com/20260522_110209/media/favicon.png) 18- [scribd.com](pages/scribd.com/20260522_110209/index.md)

@@ -36,3 +36,5 @@
 ![mangadex.org](./mangadex.org/20260522_105010/media/favicon.ico) **mangadex.org** — [ [مشاهده](./mangadex.org/20260522_105010/index.md) | [📦 دانلود](./mangadex.org/20260522_105010.zip) ]
 
 ![scribd.com](./scribd.com/20260522_105756/media/favicon.png) **scribd.com** — [ [مشاهده](./scribd.com/20260522_105756/index.md) | [📦 دانلود](./scribd.com/20260522_105756.zip) ]
+
+![scribd.com](./scribd.com/20260522_110209/media/favicon.png) **scribd.com** — [ [مشاهده](./scribd.com/20260522_110209/index.md) | [📦 دانلود](./scribd.com/20260522_110209.zip) ]
