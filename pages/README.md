@@ -44,3 +44,5 @@
 ![eporner.com](./eporner.com/20260522_111840/media/favicon.ico) **eporner.com** — [ [مشاهده](./eporner.com/20260522_111840/index.md) | [📦 دانلود](./eporner.com/20260522_111840.zip) ]
 
 ![raijin-scans.fr](./raijin-scans.fr/20260522_115232/media/favicon.png) **raijin-scans.fr** — [ [مشاهده](./raijin-scans.fr/20260522_115232/index.md) | [📦 دانلود](./raijin-scans.fr/20260522_115232.zip) ]
+
+![archiveofourown.org](./archiveofourown.org/20260522_121717/media/favicon.ico) **archiveofourown.org** — [ [مشاهده](./archiveofourown.org/20260522_121717/index.md) | [📦 دانلود](./archiveofourown.org/20260522_121717.zip) ]
