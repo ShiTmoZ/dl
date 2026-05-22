@@ -34,3 +34,5 @@
 ![favicon](pages/comix.to/20260522_104812/media/favicon.png) 15- [comix.to](pages/comix.to/20260522_104812/index.md)
 
 ![favicon](pages/mangadex.org/20260522_105010/media/favicon.ico) 16- [mangadex.org](pages/mangadex.org/20260522_105010/index.md)
+
+![favicon](pages/scribd.com/20260522_105756/media/favicon.png) 17- [scribd.com](pages/scribd.com/20260522_105756/index.md)
