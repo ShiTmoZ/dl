@@ -1,0 +1,5 @@
+/_nuxt/taoists.3huoMzwX.webp
+/favicon.ico
+/favicon.svg
+/img/cat-books.svg
+/pwa/icons/icon-180.png
