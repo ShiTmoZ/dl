@@ -48,3 +48,5 @@
 ![archiveofourown.org](./archiveofourown.org/20260522_121717/media/favicon.ico) **archiveofourown.org** — [ [مشاهده](./archiveofourown.org/20260522_121717/index.md) | [📦 دانلود](./archiveofourown.org/20260522_121717.zip) ]
 
 ![archiveofourown.org](./archiveofourown.org/20260522_135050/media/favicon.ico) **archiveofourown.org** — [ [مشاهده](./archiveofourown.org/20260522_135050/index.md) | [📦 دانلود](./archiveofourown.org/20260522_135050.zip) ]
+
+![xhmster.com](./xhmster.com/20260522_135725/media/favicon.png) **xhmster.com** — [ [مشاهده](./xhmster.com/20260522_135725/index.md) | [📦 دانلود](./xhmster.com/20260522_135725.zip) ]
