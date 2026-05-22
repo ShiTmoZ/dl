@@ -42,3 +42,5 @@
 ![web.bale.ai](./web.bale.ai/20260522_111245/media/favicon.ico) **web.bale.ai** — [ [مشاهده](./web.bale.ai/20260522_111245/index.md) | [📦 دانلود](./web.bale.ai/20260522_111245.zip) ]
 
 ![eporner.com](./eporner.com/20260522_111840/media/favicon.ico) **eporner.com** — [ [مشاهده](./eporner.com/20260522_111840/index.md) | [📦 دانلود](./eporner.com/20260522_111840.zip) ]
+
+![raijin-scans.fr](./raijin-scans.fr/20260522_115232/media/favicon.png) **raijin-scans.fr** — [ [مشاهده](./raijin-scans.fr/20260522_115232/index.md) | [📦 دانلود](./raijin-scans.fr/20260522_115232.zip) ]
