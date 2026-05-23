@@ -62,3 +62,5 @@
 ![semrush.com](./semrush.com/20260522_190942/media/favicon.ico) **semrush.com** — [ [مشاهده](./semrush.com/20260522_190942/index.md) | [📦 دانلود](./semrush.com/20260522_190942.zip) ]
 
 ![web.bale.ai](./web.bale.ai/20260523_155307/media/favicon.ico) **web.bale.ai** — [ [مشاهده](./web.bale.ai/20260523_155307/index.md) | [📦 دانلود](./web.bale.ai/20260523_155307.zip) ]
+
+![google.com](./google.com/20260523_181931/media/favicon.ico) **google.com** — [ [مشاهده](./google.com/20260523_181931/index.md) | [📦 دانلود](./google.com/20260523_181931.zip) ]
