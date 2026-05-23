@@ -60,3 +60,5 @@
 ![eporner.com](./eporner.com/20260522_171935/media/favicon.ico) **eporner.com** — [ [مشاهده](./eporner.com/20260522_171935/index.md) | [📦 دانلود](./eporner.com/20260522_171935.zip) ]
 
 ![semrush.com](./semrush.com/20260522_190942/media/favicon.ico) **semrush.com** — [ [مشاهده](./semrush.com/20260522_190942/index.md) | [📦 دانلود](./semrush.com/20260522_190942.zip) ]
+
+![web.bale.ai](./web.bale.ai/20260523_155307/media/favicon.ico) **web.bale.ai** — [ [مشاهده](./web.bale.ai/20260523_155307/index.md) | [📦 دانلود](./web.bale.ai/20260523_155307.zip) ]
