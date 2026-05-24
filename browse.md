@@ -72,3 +72,5 @@
 ![favicon](pages/share.google/20260524_054800/media/favicon.ico) 34- [share.google](pages/share.google/20260524_054800/index.md)
 
 ![favicon](pages/share.google/20260524_054926/media/favicon.ico) 35- [share.google](pages/share.google/20260524_054926/index.md)
+
+![favicon](pages/genius.com/20260524_174109/media/favicon.png) 36- [genius.com](pages/genius.com/20260524_174109/index.md)

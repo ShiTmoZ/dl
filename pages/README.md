@@ -72,3 +72,5 @@
 ![share.google](./share.google/20260524_054800/media/favicon.ico) **share.google** — [ [مشاهده](./share.google/20260524_054800/index.md) | [📦 دانلود](./share.google/20260524_054800.zip) ]
 
 ![share.google](./share.google/20260524_054926/media/favicon.ico) **share.google** — [ [مشاهده](./share.google/20260524_054926/index.md) | [📦 دانلود](./share.google/20260524_054926.zip) ]
+
+![genius.com](./genius.com/20260524_174109/media/favicon.png) **genius.com** — [ [مشاهده](./genius.com/20260524_174109/index.md) | [📦 دانلود](./genius.com/20260524_174109.zip) ]
