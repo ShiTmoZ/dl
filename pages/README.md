@@ -66,3 +66,5 @@
 ![google.com](./google.com/20260523_181931/media/favicon.ico) **google.com** — [ [مشاهده](./google.com/20260523_181931/index.md) | [📦 دانلود](./google.com/20260523_181931.zip) ]
 
 ![share.google](./share.google/20260524_054228/media/favicon.ico) **share.google** — [ [مشاهده](./share.google/20260524_054228/index.md) | [📦 دانلود](./share.google/20260524_054228.zip) ]
+
+![share.google](./share.google/20260524_054650/media/favicon.ico) **share.google** — [ [مشاهده](./share.google/20260524_054650/index.md) | [📦 دانلود](./share.google/20260524_054650.zip) ]
