@@ -64,3 +64,5 @@
 ![web.bale.ai](./web.bale.ai/20260523_155307/media/favicon.ico) **web.bale.ai** — [ [مشاهده](./web.bale.ai/20260523_155307/index.md) | [📦 دانلود](./web.bale.ai/20260523_155307.zip) ]
 
 ![google.com](./google.com/20260523_181931/media/favicon.ico) **google.com** — [ [مشاهده](./google.com/20260523_181931/index.md) | [📦 دانلود](./google.com/20260523_181931.zip) ]
+
+![share.google](./share.google/20260524_054228/media/favicon.ico) **share.google** — [ [مشاهده](./share.google/20260524_054228/index.md) | [📦 دانلود](./share.google/20260524_054228.zip) ]
