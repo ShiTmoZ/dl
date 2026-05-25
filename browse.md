@@ -100,3 +100,5 @@
 ![favicon](pages/google.com/20260525_161933/media/favicon.ico) 48- [google.com](pages/google.com/20260525_161933/index.md)
 
 ![favicon](pages/google.com/20260525_185002/media/favicon.ico) 49- [google.com](pages/google.com/20260525_185002/index.md)
+
+![favicon](pages/marcusfelling.com/20260525_185143/media/favicon.ico) 50- [marcusfelling.com](pages/marcusfelling.com/20260525_185143/index.md)
