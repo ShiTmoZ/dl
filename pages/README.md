@@ -98,3 +98,5 @@
 ![genius.com](./genius.com/20260525_161757/media/favicon.png) **genius.com** — [ [مشاهده](./genius.com/20260525_161757/index.md) | [📦 دانلود](./genius.com/20260525_161757.zip) ]
 
 ![google.com](./google.com/20260525_161933/media/favicon.ico) **google.com** — [ [مشاهده](./google.com/20260525_161933/index.md) | [📦 دانلود](./google.com/20260525_161933.zip) ]
+
+![google.com](./google.com/20260525_185002/media/favicon.ico) **google.com** — [ [مشاهده](./google.com/20260525_185002/index.md) | [📦 دانلود](./google.com/20260525_185002.zip) ]
