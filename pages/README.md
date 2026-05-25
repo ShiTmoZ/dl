@@ -86,3 +86,5 @@
 ![duffxxx.com](./duffxxx.com/20260525_160212/media/favicon.png) **duffxxx.com** — [ [مشاهده](./duffxxx.com/20260525_160212/index.md) | [📦 دانلود](./duffxxx.com/20260525_160212.zip) ]
 
 ![github.com](./github.com/20260525_160501/media/favicon.ico) **github.com** — [ [مشاهده](./github.com/20260525_160501/index.md) | [📦 دانلود](./github.com/20260525_160501.zip) ]
+
+![google.com](./google.com/20260525_160912/media/favicon.ico) **google.com** — [ [مشاهده](./google.com/20260525_160912/index.md) | [📦 دانلود](./google.com/20260525_160912.zip) ]

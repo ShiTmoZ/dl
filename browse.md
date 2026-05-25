@@ -86,3 +86,5 @@
 ![favicon](pages/duffxxx.com/20260525_160212/media/favicon.png) 41- [duffxxx.com](pages/duffxxx.com/20260525_160212/index.md)
 
 ![favicon](pages/github.com/20260525_160501/media/favicon.ico) 42- [github.com](pages/github.com/20260525_160501/index.md)
+
+![favicon](pages/google.com/20260525_160912/media/favicon.ico) 43- [google.com](pages/google.com/20260525_160912/index.md)
