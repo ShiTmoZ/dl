@@ -82,3 +82,5 @@
 ![favicon](pages/pornhub.com/20260525_154651/media/favicon.ico) 39- [pornhub.com](pages/pornhub.com/20260525_154651/index.md)
 
 ![favicon](pages/pornhub.com/20260525_155919/media/favicon.ico) 40- [pornhub.com](pages/pornhub.com/20260525_155919/index.md)
+
+![favicon](pages/duffxxx.com/20260525_160212/media/favicon.png) 41- [duffxxx.com](pages/duffxxx.com/20260525_160212/index.md)

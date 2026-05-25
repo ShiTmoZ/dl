@@ -82,3 +82,5 @@
 ![pornhub.com](./pornhub.com/20260525_154651/media/favicon.ico) **pornhub.com** — [ [مشاهده](./pornhub.com/20260525_154651/index.md) | [📦 دانلود](./pornhub.com/20260525_154651.zip) ]
 
 ![pornhub.com](./pornhub.com/20260525_155919/media/favicon.ico) **pornhub.com** — [ [مشاهده](./pornhub.com/20260525_155919/index.md) | [📦 دانلود](./pornhub.com/20260525_155919.zip) ]
+
+![duffxxx.com](./duffxxx.com/20260525_160212/media/favicon.png) **duffxxx.com** — [ [مشاهده](./duffxxx.com/20260525_160212/index.md) | [📦 دانلود](./duffxxx.com/20260525_160212.zip) ]
