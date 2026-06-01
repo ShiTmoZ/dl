@@ -118,3 +118,5 @@
 ![favicon](pages/l.hdporncomics.com/20260601_160327/media/favicon.png) 57- [l.hdporncomics.com](pages/l.hdporncomics.com/20260601_160327/index.md)
 
 ![favicon](pages/hdporncomics.com/20260601_160511/media/favicon.ico) 58- [hdporncomics.com](pages/hdporncomics.com/20260601_160511/index.md)
+
+![favicon](pages/hentai18.net/20260601_160923/media/favicon.png) 59- [hentai18.net](pages/hentai18.net/20260601_160923/index.md)
