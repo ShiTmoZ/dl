@@ -114,3 +114,5 @@
 ![rule34.xxx](./rule34.xxx/20260601_155656/media/favicon.ico) **rule34.xxx** — [ [مشاهده](./rule34.xxx/20260601_155656/index.md) | [📦 دانلود](./rule34.xxx/20260601_155656.zip) ]
 
 ![hentairead.io](./hentairead.io/20260601_160102/media/favicon.png) **hentairead.io** — [ [مشاهده](./hentairead.io/20260601_160102/index.md) | [📦 دانلود](./hentairead.io/20260601_160102.zip) ]
+
+![l.hdporncomics.com](./l.hdporncomics.com/20260601_160327/media/favicon.png) **l.hdporncomics.com** — [ [مشاهده](./l.hdporncomics.com/20260601_160327/index.md) | [📦 دانلود](./l.hdporncomics.com/20260601_160327.zip) ]

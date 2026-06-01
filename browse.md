@@ -114,3 +114,5 @@
 ![favicon](pages/rule34.xxx/20260601_155656/media/favicon.ico) 55- [rule34.xxx](pages/rule34.xxx/20260601_155656/index.md)
 
 ![favicon](pages/hentairead.io/20260601_160102/media/favicon.png) 56- [hentairead.io](pages/hentairead.io/20260601_160102/index.md)
+
+![favicon](pages/l.hdporncomics.com/20260601_160327/media/favicon.png) 57- [l.hdporncomics.com](pages/l.hdporncomics.com/20260601_160327/index.md)
