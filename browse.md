@@ -116,3 +116,5 @@
 ![favicon](pages/hentairead.io/20260601_160102/media/favicon.png) 56- [hentairead.io](pages/hentairead.io/20260601_160102/index.md)
 
 ![favicon](pages/l.hdporncomics.com/20260601_160327/media/favicon.png) 57- [l.hdporncomics.com](pages/l.hdporncomics.com/20260601_160327/index.md)
+
+![favicon](pages/hdporncomics.com/20260601_160511/media/favicon.ico) 58- [hdporncomics.com](pages/hdporncomics.com/20260601_160511/index.md)
