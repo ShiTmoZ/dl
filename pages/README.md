@@ -120,3 +120,5 @@
 ![hdporncomics.com](./hdporncomics.com/20260601_160511/media/favicon.ico) **hdporncomics.com** — [ [مشاهده](./hdporncomics.com/20260601_160511/index.md) | [📦 دانلود](./hdporncomics.com/20260601_160511.zip) ]
 
 ![hentai18.net](./hentai18.net/20260601_160923/media/favicon.png) **hentai18.net** — [ [مشاهده](./hentai18.net/20260601_160923/index.md) | [📦 دانلود](./hentai18.net/20260601_160923.zip) ]
+
+![hdporncomics.com](./hdporncomics.com/20260601_161128/media/favicon.ico) **hdporncomics.com** — [ [مشاهده](./hdporncomics.com/20260601_161128/index.md) | [📦 دانلود](./hdporncomics.com/20260601_161128.zip) ]
