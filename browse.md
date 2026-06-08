@@ -126,3 +126,5 @@
 ![favicon](pages/wol.gg/20260608_074129/media/favicon.png) 61- [wol.gg](pages/wol.gg/20260608_074129/index.md)
 
 ![favicon](pages/wol.gg/20260608_074358/media/favicon.png) 62- [wol.gg](pages/wol.gg/20260608_074358/index.md)
+
+![favicon](pages/wol.gg/20260608_074501/media/favicon.png) 63- [wol.gg](pages/wol.gg/20260608_074501/index.md)

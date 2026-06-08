@@ -126,3 +126,5 @@
 ![wol.gg](./wol.gg/20260608_074129/media/favicon.png) **wol.gg** — [ [مشاهده](./wol.gg/20260608_074129/index.md) | [📦 دانلود](./wol.gg/20260608_074129.zip) ]
 
 ![wol.gg](./wol.gg/20260608_074358/media/favicon.png) **wol.gg** — [ [مشاهده](./wol.gg/20260608_074358/index.md) | [📦 دانلود](./wol.gg/20260608_074358.zip) ]
+
+![wol.gg](./wol.gg/20260608_074501/media/favicon.png) **wol.gg** — [ [مشاهده](./wol.gg/20260608_074501/index.md) | [📦 دانلود](./wol.gg/20260608_074501.zip) ]
