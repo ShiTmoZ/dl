@@ -122,3 +122,5 @@
 ![favicon](pages/hentai18.net/20260601_160923/media/favicon.png) 59- [hentai18.net](pages/hentai18.net/20260601_160923/index.md)
 
 ![favicon](pages/hdporncomics.com/20260601_161128/media/favicon.ico) 60- [hdporncomics.com](pages/hdporncomics.com/20260601_161128/index.md)
+
+![favicon](pages/wol.gg/20260608_074129/media/favicon.png) 61- [wol.gg](pages/wol.gg/20260608_074129/index.md)
