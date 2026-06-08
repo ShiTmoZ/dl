@@ -1,0 +1,16 @@
+/static/images/assets/flags/000-none.png
+/static/images/assets/flags/063-japan.svg
+/static/images/assets/flags/094-south-korea.svg
+/static/images/assets/flags/128-spain.svg
+/static/images/assets/flags/162-germany.svg
+/static/images/assets/flags/195-france.svg
+/static/images/assets/flags/211-poland.svg
+/static/images/assets/flags/218-turkey.svg
+/static/images/assets/flags/224-portugal.svg
+/static/images/assets/flags/248-russia.svg
+/static/images/assets/flags/260-united-kingdom.svg
+/static/images/assets/redspawn.png
+/static/images/assets/wologo.png
+https://ddragon.leagueoflegends.com/cdn/16.11.1/img/profileicon/6466.png
+https://wol.gg/static/images/assets/favicon.png
+https://wol.gg/static/images/summoners/WHg7ZMMxAMCKamEI0IEDiVI57zqO2gnhWIKmUon2BpL6JzbsrXmGRJszZDMui28nhg4iNJbNsYpGsw.png
