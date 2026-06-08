@@ -132,3 +132,5 @@
 ![wol.gg](./wol.gg/20260608_074734/media/favicon.png) **wol.gg** — [ [مشاهده](./wol.gg/20260608_074734/index.md) | [📦 دانلود](./wol.gg/20260608_074734.zip) ]
 
 ![soundcloud.com](./soundcloud.com/20260608_100613/media/favicon.ico) **soundcloud.com** — [ [مشاهده](./soundcloud.com/20260608_100613/index.md) | [📦 دانلود](./soundcloud.com/20260608_100613.zip) ]
+
+![soundcloud.com](./soundcloud.com/20260608_100944/media/favicon.ico) **soundcloud.com** — [ [مشاهده](./soundcloud.com/20260608_100944/index.md) | [📦 دانلود](./soundcloud.com/20260608_100944.zip) ]
